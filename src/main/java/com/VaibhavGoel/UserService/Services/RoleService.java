@@ -3,7 +3,6 @@ package com.VaibhavGoel.UserService.Services;
 import com.VaibhavGoel.UserService.Modal.Role;
 import com.VaibhavGoel.UserService.Repository.RoleRepository;
 import org.springframework.stereotype.Service;
-import java.util.List;
 @Service
 public class RoleService {
     private final RoleRepository roleRepository;

@@ -7,7 +7,6 @@ import com.VaibhavGoel.UserService.Repository.RoleRepository;
 import com.VaibhavGoel.UserService.Repository.UserRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.Optional;
 import java.util.List;
 import java.util.Set;
