@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity(name="us_role")
+@Entity
 public class Role extends BaseModal{
     private String role;
 }

@@ -11,7 +11,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-@Entity(name="us_session")
+@Entity
 public class Session extends BaseModal {
     private String token;
     private Date expiryAt;

@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Getter
 @Setter
-@Entity(name="us_user")
+@Entity
 public class User extends BaseModal{
     private String email;
     private String password;
