@@ -1,8 +1,7 @@
 package com.VaibhavGoel.UserService.Security.repositories;
 
-
-
 import java.util.Optional;
+
 
 import com.VaibhavGoel.UserService.Security.models.Authorization;
 import org.springframework.data.jpa.repository.JpaRepository;

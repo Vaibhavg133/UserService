@@ -1,4 +1,5 @@
 package com.VaibhavGoel.UserService.Security.repositories;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +9,7 @@ import com.VaibhavGoel.UserService.Security.models.Client;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.springframework.security.jackson2.SecurityJackson2Modules;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
@@ -50,7 +52,7 @@ public class JpaRegisteredClientRepository implements RegisteredClientRepository
     @Override
     public RegisteredClient findByClientId(String clientId) {
         Assert.hasText(clientId, "clientId cannot be empty");
-        return this.clientRepository.findByClientId(clientId).map(this::toObject).orElse(null);//client;//this.clientRepository.findByClientId(clientId).map(this::toObject).orElse(null);
+        return this.clientRepository.findByClientId(clientId).map(this::toObject).orElse(null);
     }
 
     private RegisteredClient toObject(Client client) {
