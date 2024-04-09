@@ -1,5 +1,6 @@
 package com.VaibhavGoel.UserService.Security;
 
+import com.VaibhavGoel.UserService.Modal.Role;
 import com.VaibhavGoel.UserService.Modal.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -10,8 +11,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+
 @Getter
 @Setter
 @JsonDeserialize(as = CustomUserDetails.class)
@@ -22,7 +26,15 @@ public class CustomUserDetails implements UserDetails {
     @Override
     @JsonIgnore
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        Set<Role> roles = user.getRoles();
+
+        Collection<CustomGrantedAuthority> customGrantedAuthorities = new ArrayList<>();
+        for (Role role : roles) {
+            customGrantedAuthorities.add(
+                    new CustomGrantedAuthority(role)
+            );
+        }
+        return customGrantedAuthorities;
     }
 
     @Override
